@@ -68,7 +68,7 @@ ZSH_THEME="crunch"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z fzf zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git z fzf zsh-syntax-highlighting zsh-autosuggestions kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,9 +104,15 @@ alias l='ls -CF'
 
 alias code='cd /home/torrico/code'
 alias dv='cd /home/torrico/code/gupy-api-darthvader'
-alias vpn='sudo openvpn /home/torrico/Dropbox/Gupy-Dropbox/daniel.villarreal.ovpn'
+alias vpn='sudo openvpn /home/torrico/Dropbox/Gupy-Dropbox/daniel_torrico.ovpn'
 alias k=kubectl
+alias python=python3
 alias gst='git status'
 alias datagrip='/home/torrico/Documentos/datagrip-2020.1.3/DataGrip-2020.1.3/bin/datagrip.sh'
 alias jupyter='sudo docker run -p 10000:8888 -p 4040:4040 -v /home/torrico/Documentos/jupyter-notebooks:/home/jovyan/work -e JUPYTER_ENABLE_LAB=yes -e JUPYTER_TOKEN="123" jupyter/pyspark-notebook:17aba6048f44'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
